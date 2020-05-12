@@ -2,7 +2,14 @@
 
 This package adds support for configuring global options for dhclient on Ubiquity Security Gateway.
 
-## Example use case
+## Improvements
+
+- Write configured `global-option`s to e.g. `/var/run/dhclient_eth0.conf`
+- Re-generate dhclient config on configuration changes
+
+## Example use cases
+
+This package can be used to request custom dhcp option from the dhcp server (e.g. your ISP).
 
 ### Enable option-6rd request
 
