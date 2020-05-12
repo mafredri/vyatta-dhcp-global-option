@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+	install | upgrade) ;;
+esac
+
+if [ "$1" = "install" ]; then
+	dpkg-divert --package dhcp-global-option --rename \
+		--divert /opt/vyatta/sbin/vyatta-interfaces.pl.vyatta \
+		--add /opt/vyatta/sbin/vyatta-interfaces.pl
+fi

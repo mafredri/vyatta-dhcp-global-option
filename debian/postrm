@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$1" = "remove" ] || [ "$1" = "abort-install" ] || [ "$1" = "disappear" ]; then
+	if [ -n "$(dpkg-divert --list dhcp-global-option)" ]; then
+		dpkg-divert --package dhcp-global-option --rename --remove /opt/vyatta/sbin/vyatta-interfaces.pl
+	fi
+fi
