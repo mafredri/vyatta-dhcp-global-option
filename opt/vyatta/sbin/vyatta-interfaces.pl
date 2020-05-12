@@ -169,6 +169,22 @@ sub replace_quot {
     return $line;
 }
 
+sub get_global_options {
+    my $name = shift;
+
+    my $config = new Vyatta::Config;
+    my $intf = new Vyatta::Interface($name);
+    my $path = $intf->path();
+    $config->setLevel("$path dhcp-options");
+    my @options = $config->returnValues('global-option');
+    my $output = '';
+    foreach my $line (@options) {
+        my $decoded_line = replace_quot($line);
+        $output .= "$decoded_line\n";
+    }
+    return $output;
+}
+
 sub get_client_options {
     my $name = shift;
     
@@ -191,7 +207,9 @@ sub dhcp_update_config {
     my $output = dhcp_conf_header();
     my $hostname = get_hostname();
 
-    $output .= "option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n\n";
+    $output .= "option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;\n";
+    $output .= get_global_options($intf);
+    $output .= "\n";
 
     $output .= "interface \"$intf\" {\n";
     if (defined($hostname)) {
