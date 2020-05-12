@@ -250,9 +250,11 @@ sub run_dhclient {
     my ($intf_config_file, $intf_process_id_file, $intf_leases_file)
         = generate_dhclient_intf_files($intf);
 
+    # Always update dhcp config file.
+    dhcp_update_config($intf_config_file, $intf);
+
     # perform config mode actions if not called from op-mode
     if (!defined $op_mode) {
-      dhcp_update_config($intf_config_file, $intf);
       return if is_intf_disabled($intf);
     }
 
