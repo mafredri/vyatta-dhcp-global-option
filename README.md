@@ -7,6 +7,15 @@ This package adds support for configuring global options for dhclient on Ubiquit
 - Write configured `global-option`s to e.g. `/var/run/dhclient_eth0.conf`
 - Re-generate dhclient config on configuration changes
 
+## Installation
+
+Download the latest release from [Releases](https://github.com/mafredri/vyatta-dhcp-global-option/releases).
+
+```
+curl -o /tmp/dhcp-global-option-0.0.1-1.deb https://github.com/mafredri/vyatta-dhcp-global-option/releases/download/v0.0.1/dhcp-global-option-0.0.1-1.deb
+sudo dpkg -i /tmp/dhcp-global-option-0.0.1-1.deb
+```
+
 ## Example use cases
 
 This package can be used to request custom dhcp option from the dhcp server (e.g. your ISP).
