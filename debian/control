@@ -5,4 +5,4 @@ Architecture: PACKAGE_ARCH
 Maintainer: Mathias Fredriksson <mafredri@gmail.com>
 Section: net
 Homepage: https://github.com/mafredri/vyatta-usg-dhcp-global-option
-Description: support dhcp global options on Ubiquity Security Gateway
+Description: support dhcp global options on UniFi Security Gateway

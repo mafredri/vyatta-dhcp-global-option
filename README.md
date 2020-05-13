@@ -1,6 +1,6 @@
 # vyatta-dhcp-global-option
 
-This package adds support for configuring global options for dhclient on Ubiquity Security Gateway.
+This package adds support for configuring global options for dhclient on UniFi Security Gateway.
 
 ## Improvements
 
