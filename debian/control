@@ -4,5 +4,5 @@ Version: PACKAGE_VERSION-PACKAGE_RELEASE
 Architecture: PACKAGE_ARCH
 Maintainer: Mathias Fredriksson <mafredri@gmail.com>
 Section: net
-Homepage: https://github.com/mafredri/vyatta-usg-dhcp-global-option
-Description: support dhcp global options on UniFi Security Gateway
+Homepage: https://github.com/mafredri/vyatta-dhcp-global-option
+Description: Support dhcp global options on UniFi Security Gateway
