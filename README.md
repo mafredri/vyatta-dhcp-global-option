@@ -12,7 +12,7 @@ This package adds support for configuring global options for dhclient on UniFi S
 Download the latest release from [Releases](https://github.com/mafredri/vyatta-dhcp-global-option/releases).
 
 ```
-curl -o /tmp/dhcp-global-option-0.0.2-1.deb https://github.com/mafredri/vyatta-dhcp-global-option/releases/download/v0.0.2/dhcp-global-option-0.0.2-1.deb
+curl -sSL -o /tmp/dhcp-global-option-0.0.2-1.deb https://github.com/mafredri/vyatta-dhcp-global-option/releases/download/v0.0.2/dhcp-global-option-0.0.2-1.deb
 sudo dpkg -i /tmp/dhcp-global-option-0.0.2-1.deb
 ```
 
