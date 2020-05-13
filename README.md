@@ -16,6 +16,15 @@ curl -o /tmp/dhcp-global-option-0.0.1-1.deb https://github.com/mafredri/vyatta-d
 sudo dpkg -i /tmp/dhcp-global-option-0.0.1-1.deb
 ```
 
+### Restore after firmare upgrade
+
+The UniFi Security Gateway runs a script (`etc/init.d/ubnt-rcS`) after firmware upgrades, it looks for `.deb` packages in `/config/data/firstboot/install-packages` and if there are any, installs them. We can utilize this folder to make sure the package remains installed.
+
+```
+mkdir -p /config/data/firstboot/install-packages
+mv /tmp/dhcp-global-option-0.0.1-1.deb /config/data/firstboot/install-packages
+```
+
 ## Example use cases
 
 This package can be used to request custom dhcp option from the dhcp server (e.g. your ISP).
