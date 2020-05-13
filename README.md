@@ -16,7 +16,7 @@ curl -sSL -o /tmp/dhcp-global-option-0.0.2-1.deb https://github.com/mafredri/vya
 sudo dpkg -i /tmp/dhcp-global-option-0.0.2-1.deb
 ```
 
-### Restore after firmare upgrade
+### Automatic restore after firmare upgrade
 
 The UniFi Security Gateway runs a script (`etc/init.d/ubnt-rcS`) after firmware upgrades, it looks for `.deb` packages in `/config/data/firstboot/install-packages` and if there are any, installs them. We can utilize this folder to make sure the package remains installed.
 
