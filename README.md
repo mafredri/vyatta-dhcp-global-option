@@ -31,10 +31,36 @@ This package can be used to request custom dhcp option from the dhcp server (e.g
 
 ### Enable option-6rd request
 
+Can be configured either via terminal or `config.gateway.json`. Only the latter will persist after firmware upgrades and possibly restarts.
+
+#### Configure via terminal
+
 ```
 configure
 set interfaces ethernet eth0 dhcp-options global-option "option option-6rd code 212 = { integer 8, integer 8, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, array of ip-address };"
 set interfaces ethernet eth0 dhcp-options client-option "also request option-6rd;"
 commit
 save
+```
+
+#### Configure via `config.gateway.json`
+
+```json
+{
+  "interfaces": {
+    "ethernet": {
+      "eth0": {
+        "dhcp-options": {
+          "global-option": [
+            "option option-6rd code 212 = { integer 8, integer 8, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, unsigned integer 16, array of ip-address };"
+          ],
+          "client-option": [
+            "also request option-6rd;",
+            "retry 60;"
+          ]
+        }
+      }
+    },
+  }
+}
 ```
